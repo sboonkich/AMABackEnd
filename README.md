@@ -15,6 +15,15 @@
 //เพิ่มบรรทัด "dev": "nodemon ./bin/www" ต่อจากบรรทัด start ใน file pakage.json แล้วรัน npm run dev
 #npm run dev
 
+//install sequelize
+npm install sequelize pg pg-hstore
+
+//install dotenv
+npm i dotenv
+
+https://www.npmjs.com/package/bcrypt
+npm i bcrypt
+
 npm i pm2
 
 //body login

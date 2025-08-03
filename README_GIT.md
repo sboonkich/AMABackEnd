@@ -8,7 +8,7 @@ git remote add origin https://github.com/sboonkich/AMABackEnd.git
 git push -u origin main
 
 ##push an existing repository from the command line
-git remote add origin https://github.com/sboonkich/AI-Logistic.git
+git remote add origin https://github.com/sboonkich/AMABackEnd.git
 git branch -M main
 git push -u origin main
 
@@ -24,3 +24,6 @@ jwt
 https://www.borntodev.com/2023/11/01/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99-jwt-json-web-tokens-%E0%B9%83%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3-authentication/
 
 npm i pm2
+"serve": "pm2-runtime ./bin/www",
+
+2 john $2b$10$USvm27iGcppwmJvapQ.UueKXltuUciOKUI2YNeSLycJwLa19iLGtK John Doe

@@ -13,13 +13,14 @@ let logindbbcryptRouter = require("./routes/logindbbcrypt");
 let tokenVerify = require("./middlewares/tokenHandle");
 let sequelize = require("./middlewares/dbconnect");
 const User = require("./models/user");
+const Shop = require("./models/shop");
 
 async function testDbConnect() {
   try {
     await sequelize.authenticate();
     console.log("Connection has been established successfully.");
     // console.log(User === sequelize.models.User);
-    //sequelize.sync();
+    sequelize.sync();
 
     //    const users = await User.findAll();
     //    console.log("=".repeat(25));

@@ -1,19 +1,19 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../middlewares/dbconnect");
 
-const User = sequelize.define("User", {
+const Shop = sequelize.define("Shop", {
   // Model attributes are defined here
-  username: {
+  name: {
     type: DataTypes.STRING,
     allowNull: false,
     unique: true,
-    //    primaryKey: true,
+    //primaryKey: true,
   },
-  password: {
+  province: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  fullname: {
+  district: {
     type: DataTypes.STRING,
     allowNull: true,
   },
@@ -21,4 +21,4 @@ const User = sequelize.define("User", {
 
 // `sequelize.define` also returns the model
 //console.log(User === sequelize.models.User); // true
-module.exports = User;
+module.exports = Shop;
