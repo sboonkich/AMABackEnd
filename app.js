@@ -6,7 +6,7 @@ var logger = require("morgan");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 let shopsRouter = require("./routes/shops");
-let loginRouter = require("./routes/login");
+let loginRouter = require("./routes/logins");
 let logindbRouter = require("./routes/logindb");
 let logindbbcryptRouter = require("./routes/logindbbcrypt");
 

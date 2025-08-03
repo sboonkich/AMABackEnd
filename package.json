@@ -10,6 +10,9 @@
   "dependencies": {
     "bcrypt": "^6.0.0",
     "cookie-parser": "~1.4.4",
+    "dayjs": "^1.11.13",
+    "dayjs-plugin-utc": "^0.1.2",
+    "dayjs-timezone-iana-plugin": "^0.2.0",
     "debug": "~2.6.9",
     "dotenv": "^17.2.1",
     "express": "~4.16.1",

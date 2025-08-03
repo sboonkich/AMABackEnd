@@ -26,6 +26,10 @@ npm i bcrypt
 
 npm i pm2
 
+npm install dayjs
+npm install dayjs-plugin-utc
+npm i dayjs-timezone-iana-plugin
+
 //body login
 {
 "username": "admin",
