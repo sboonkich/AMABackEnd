@@ -23,10 +23,8 @@ const Shop = sequelize.define(
     updatedAt: { type: DataTypes.DATE, defaultValue: DataTypes.NOW },
   },
   {
-    timestamps: false, // ปิดของ default
+    timestamps: false, // ปิด default createdAt,updatedAt
   }
 );
 
-// `sequelize.define` also returns the model
-//console.log(User === sequelize.models.User); // true
 module.exports = Shop;

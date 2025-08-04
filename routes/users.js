@@ -50,7 +50,6 @@ router.put("/:id", async function (req, res) {
       where: {
         id: id,
       },
-      raw: true,
     });
     if (!user) {
       throw new Error("User not found.");
@@ -79,6 +78,7 @@ router.put("/:id", async function (req, res) {
     if (body.fullname) {
       data.fullname = body.fullname;
     }
+    data.updatedAt = new Date();
 
     let result = await User.update(data, {
       where: {
@@ -117,7 +117,7 @@ router.delete("/:id", async (req, res) => {
     });
     res.status(200).json({
       success: true,
-      message: "User Delete test.",
+      message: `User Delete  ${user.fullname}`,
       data: result,
     });
   } catch (error) {

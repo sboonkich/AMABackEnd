@@ -26,9 +26,16 @@ npm i bcrypt
 
 npm i pm2
 
-npm install dayjs
-npm install dayjs-plugin-utc
-npm i dayjs-timezone-iana-plugin
+#npm install dayjs
+#npm install dayjs-plugin-utc
+#npm i dayjs-timezone-iana-plugin
+
+postgresql://myapp:
+vyQtHEUDtahov8FpWXL1ymU7J8eXpKxJ
+@
+dpg-d26ok2u3jp1c73dauk50-a
+/
+myappdb_mqig
 
 //body login
 {

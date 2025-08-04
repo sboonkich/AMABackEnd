@@ -4,6 +4,8 @@ var router = express.Router();
 const Shops = require("../models/shop");
 let tokenVerify = require("../middlewares/tokenHandle");
 const Shop = require("../models/shop");
+const e = require("express");
+
 //const dayjs = require("dayjs");
 //dayjs.extend(require("dayjs/plugin/utc"));
 //dayjs.extend(require("dayjs-timezone-iana-plugin"));
@@ -12,13 +14,31 @@ router.get("/", async function (req, res, next) {
   const name = req.query.name;
   let condition = name ? { where: { name } } : {};
   let shopsData = await Shops.findAll(condition);
-  res.status(200).json({
-    success: true,
-    data: shopsData,
-  });
+  console.log(shopsData);
+  if (shopsData.length == 0) {
+    res.status(200).json({
+      success: false,
+      data: "Shop not found",
+    });
+  } else {
+    res.status(200).json({
+      success: true,
+      data: shopsData,
+    });
+  }
 });
 
-router.post("/", async function (req, res) {
+// router.get("/:name", async function (req, res, next) {
+//   const name = req.query.name;
+//   let condition = name ? { where: { name } } : {};
+//   let shopsData = await Shops.findOne(condition);
+//   res.status(200).json({
+//     success: true,
+//     data: shopsData,
+//   });
+// });
+
+router.post("/", [tokenVerify], async function (req, res) {
   try {
     const body = req.body;
     if (!body.name || !body.province || !body.district) {
@@ -61,17 +81,23 @@ router.put("/:id", async function (req, res) {
   try {
     const body = req.body;
     const id = req.params.id;
+
+    console.log(id);
+    console.log(body);
+
     const shop = await Shops.findOne({
       where: {
         id: id,
       },
-      raw: true,
     });
     if (!shop) {
       throw new Error("Shop not found.");
     }
 
+    console.log(shop);
+
     let data = shop;
+
     if (body.name) {
       data.name = body.name;
     } else {
@@ -87,6 +113,8 @@ router.put("/:id", async function (req, res) {
     if (body.district) {
       data.district = body.district;
     }
+
+    data.updatedAt = new Date();
 
     let result = await shop.update(data, {
       where: {
