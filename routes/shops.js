@@ -77,7 +77,7 @@ router.post("/", [tokenVerify], async function (req, res) {
   }
 });
 
-router.put("/:id", async function (req, res) {
+router.put("/:id", [tokenVerify], async function (req, res) {
   try {
     const body = req.body;
     const id = req.params.id;
@@ -134,7 +134,7 @@ router.put("/:id", async function (req, res) {
   }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", [tokenVerify], async (req, res) => {
   try {
     const id = req.params.id;
     const shop = await Shops.findOne({
